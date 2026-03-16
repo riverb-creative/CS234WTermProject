@@ -1,6 +1,6 @@
 /**
  * Wishlist.jsx
- *  a component describing an individual book object
+ *  a component describing an individual book objects
  */
 
 import { useEffect, useState } from 'react';
