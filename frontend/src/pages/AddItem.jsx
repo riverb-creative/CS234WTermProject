@@ -29,7 +29,7 @@ const AddItem = () => {
             favorite: itemFav
         }
 
-            fetch("http://localhost:3000/wishlist", {
+            fetch(`${import.meta.env.API_URL}/wishlist`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

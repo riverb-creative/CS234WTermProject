@@ -13,11 +13,11 @@ const Wishlist = () => {
     const [viewFav, setViewFav] = useState(false);
     const [deletedItemData, setDeletedItemData] = useState({});
 
-    const {data, message, loading, error} = useFetch("http://localhost:3000/wishlist");
+    const {data, message, loading, error} = useFetch(import.meta.env.API_URL + "/wishlist");
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3000/wishlist/" + deleteId,
+        fetch(`${import.meta.env.API_URL}/wishlist/` + deleteId,
             {method: "DELETE"}
         )
         .then(response => response.json())
