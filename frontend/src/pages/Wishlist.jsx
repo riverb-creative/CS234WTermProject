@@ -13,11 +13,11 @@ const Wishlist = () => {
     //const [currentItems, setCurrentItems] = useState(data);
     const [deletedItemData, setDeletedItemData] = useState({});
 
-    const {data, message, loading, error} = useFetch(`${import.meta.env.API_URL}/wishlist/`);
+    const {data, message, loading, error} = useFetch(`${import.meta.env.VITE_API_URL}/wishlist/`);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`${import.meta.env.API_URL}/wishlist/` + deleteId,
+        fetch(`${import.meta.env.VITE_API_URL}/wishlist/` + deleteId,
             {method: "DELETE"}
         )
         .then(response => response.json())
