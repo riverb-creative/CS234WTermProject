@@ -10,10 +10,10 @@ import './Wishlist.css'
 const Wishlist = () => {
     const [deleteId, setDeleteId] = useState("");
     const [deleteSuccess, setDeleteSuccess] = useState("");
-    const [viewFav, setViewFav] = useState(false);
+    //const [currentItems, setCurrentItems] = useState(data);
     const [deletedItemData, setDeletedItemData] = useState({});
 
-    const {data, message, loading, error} = useFetch(import.meta.env.API_URL + "/wishlist");
+    const {data, message, loading, error} = useFetch(`${import.meta.env.API_URL}/wishlist/`);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -25,16 +25,29 @@ const Wishlist = () => {
             setDeleteSuccess(data.message);
             setDeletedItemData(data.itemDeleted);
         })
+    };
+
+   /** 
+    const handleClick = (item) => {
+        const filterItem = data.filter((item) => item.favorite);
+        setCurrentItems(filterItem);
     }
 
+    const handleSeeAllClick = () => {
+        setCurrentItems(data);
+    }
+*/
     return (
         <>
+        {
+        /** 
         <p>Want to only view your favorites? Click the button below</p>
-        {viewFav ? (
-            <p></p>
-        ) : (
-            <p></p>
-        )
+        <input onClick = {() => handleClick() } 
+                type='button' id="btnSubmit" value="View Favorites" />
+        
+        <input onClick = {() => handleSeeAllClick() } 
+                type='button' id="btnSubmit" value="View Wishlist" />
+        */
         }
         <form onSubmit={handleSubmit}>
             <table>
