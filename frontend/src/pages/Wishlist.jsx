@@ -10,7 +10,7 @@ import './Wishlist.css'
 const Wishlist = () => {
     const [deleteId, setDeleteId] = useState("");
     const [deleteSuccess, setDeleteSuccess] = useState("");
-    //const [currentItems, setCurrentItems] = useState(data);
+    const [currentItems, setCurrentItems] = useState(data);
     const [deletedItemData, setDeletedItemData] = useState({});
 
     const {data, message, loading, error} = useFetch(import.meta.env.VITE_API_URL + "wishlist");
