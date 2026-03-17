@@ -27,7 +27,7 @@ const Wishlist = () => {
         })
     };
 
-   /** 
+   
     const handleClick = (item) => {
         const filterItem = data.filter((item) => item.favorite);
         setCurrentItems(filterItem);
@@ -36,19 +36,16 @@ const Wishlist = () => {
     const handleSeeAllClick = () => {
         setCurrentItems(data);
     }
-*/
+
     return (
         <>
-        {
-        /** 
         <p>Want to only view your favorites? Click the button below</p>
         <input onClick = {() => handleClick() } 
                 type='button' id="btnSubmit" value="View Favorites" />
         
         <input onClick = {() => handleSeeAllClick() } 
                 type='button' id="btnSubmit" value="View Wishlist" />
-        */
-        }
+
         <form onSubmit={handleSubmit}>
             <table>
                 <thead>
