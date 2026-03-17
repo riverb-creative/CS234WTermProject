@@ -29,7 +29,7 @@ const AddItem = () => {
             favorite: itemFav
         }
 
-            fetch(import.meta.env.VITE_API_URL + "/wishlist", {
+            fetch(import.meta.env.VITE_API_URL + "wishlist", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -13,7 +13,7 @@ const UpdateItem = () => {
     const [updateSuccess, setUpdateSuccess] = useState("");
     const [updatedItemData, setUpdatedItemData] = useState({});
 
-    const {data, message, loading, error} = useFetch(import.meta.env.VITE_API_URL + "/wishlist");
+    const {data, message, loading, error} = useFetch(import.meta.env.VITE_API_URL + "wishlist");
 
      const handleRadioChange = (event) => {
         setUpdateItemFav(event.target.value === 'true');
@@ -35,7 +35,7 @@ const UpdateItem = () => {
             favorite: updateItemFav
         }
         
-        fetch(import.meta.env.VITE_API_URL + "/wishlist/" + itemId, {
+        fetch(import.meta.env.VITE_API_URL + "wishlist/" + itemId, {
             method: "PUT",            
             headers: {
                 "Content-Type": "application/json"
