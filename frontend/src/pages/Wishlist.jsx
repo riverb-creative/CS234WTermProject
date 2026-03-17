@@ -40,10 +40,10 @@ const Wishlist = () => {
     return (
         <>
         <p>Want to only view your favorites? Click the button below</p>
-        <input onClick = {() => handleClick() } 
+        <input onClick = {() => handleClick(currentItems.favorite) } 
                 type='button' id="btnSubmit" value="View Favorites" />
         
-        <input onClick = {() => handleSeeAllClick() } 
+        <input onClick = {() => handleSeeAllClick(currentItems.favorite) } 
                 type='button' id="btnSubmit" value="View Wishlist" />
 
         <form onSubmit={handleSubmit}>
@@ -58,7 +58,7 @@ const Wishlist = () => {
                         <th>Delete Item?</th>
                     </tr>
                 </thead>
-                {data.map((item) => (
+                {currentItems.map((item) => (
                     <tbody>
                     <tr>
                         <td>{item.category}</td>
