@@ -36,15 +36,14 @@ const Wishlist = () => {
         setCurrentItems(data);
     }
 
-    console.log("data initial load: ", data);
+    //console.log("data initial load: ", data);
 
-    console.log("initial load: ", loading);
+    //console.log("initial load: ", loading);
 
-    console.log("currentItems at load: ", currentItems);
+    //console.log("currentItems at load: ", currentItems);
 
     return (
         <>
-       
         <p>Want to only view your favorites? Click the <em>View Favorites</em> button below</p>
         <input onClick = {() => handleClick(currentItems.favorite) } 
                 type='button' className="viewBtn" value="View Favorites" />
