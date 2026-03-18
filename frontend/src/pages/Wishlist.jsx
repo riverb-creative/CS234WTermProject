@@ -42,13 +42,13 @@ const Wishlist = () => {
         setCurrentItems(data);
     }
 
-    //console.log("data initial load: ", data);
 
-    //console.log("initial load: ", loading);
-
-    //console.log("currentItems at load: ", currentItems);
   if(loading) {
     return (<p>Loading...</p>)
+  }
+
+  if(error) {
+    return (<p>Apologies, there is an issue: {error}</p>)
   }
   
     return (

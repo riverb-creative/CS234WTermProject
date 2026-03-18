@@ -4,7 +4,7 @@
  * a component that allows users to add a new book element
  */
 import { useState } from 'react';
-
+import useFetch from '../hooks/useFetch';
 
 const AddItem = () => {
     const [itemCat, setItemCat] = useState("");
@@ -13,6 +13,7 @@ const AddItem = () => {
     const [itemPrice, setItemPrice] = useState("");
     const [itemFav, setItemFav] = useState(false);
     const [success, setSuccess] = useState("");
+    const {data, message, loading, error} = useFetch(import.meta.env.VITE_API_URL + "wishlist");
 
     const handleRadioChange = (event) => {
         setItemFav(event.target.value === 'true');
@@ -45,6 +46,14 @@ const AddItem = () => {
         setItemPrice("");
         setItemFav(false);
     }
+
+    if(loading) {
+    return (<p>Loading...</p>)
+  }
+
+  if(error) {
+    return (<p>Apologies, there is an issue: {error}</p>)
+  }
 
     return (
         <div>

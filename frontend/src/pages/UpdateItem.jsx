@@ -52,7 +52,13 @@ const UpdateItem = () => {
         })
     }
 
-    //console.log("source: " + import.meta.env.VITE_API_URL + "wishlist");
+  if(loading) {
+    return (<p>Loading...</p>)
+  }
+
+  if(error) {
+    return (<p>Apologies, there is an issue: {error}</p>)
+  }
 
     return (
         <>
