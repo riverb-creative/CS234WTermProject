@@ -49,6 +49,7 @@ const AddItem = () => {
     return (
         <div>
             <h3>Add an Item to your wishlist!</h3>
+            <h4>{(success == "success")? "Item Added! Click View WishList to see updated wishlist!" : "Please fill out the form"}</h4>
             <fieldset>
                 <form onSubmit={submitForm}>
                     <select name="selCat" onChange={(event) => setItemCat(event.target.value)}>

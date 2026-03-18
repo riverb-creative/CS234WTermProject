@@ -44,6 +44,7 @@ const Wishlist = () => {
 
     return (
         <>
+        <h4>{(deleteSuccess == "success")? "Item Deleted! Click View WishList to see updated wishlist!" : ""}</h4>
         <p>Want to only view your favorites? Click the <em>View Favorites</em> button below</p>
         <input onClick = {() => handleClick(currentItems.favorite) } 
                 type='button' className="viewBtn" value="View Favorites" />

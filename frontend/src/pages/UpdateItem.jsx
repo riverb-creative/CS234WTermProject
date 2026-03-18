@@ -52,12 +52,13 @@ const UpdateItem = () => {
         })
     }
 
-    console.log("source: " + import.meta.env.VITE_API_URL + "wishlist");
+    //console.log("source: " + import.meta.env.VITE_API_URL + "wishlist");
 
     return (
         <>
                 {editItem? ( 
                    <> 
+        <h4>{(updateSuccess == "success")? "Item Updated! Click View WishList to see updated wishlist!" : "Please fill out the form"}</h4>
                    <fieldset>
                 <form>
                     <select name="selCat" onChange={(event) => setUpdateItemCat(event.target.value)}>
