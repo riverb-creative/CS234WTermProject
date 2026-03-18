@@ -12,7 +12,13 @@ const Wishlist = () => {
     const [deleteSuccess, setDeleteSuccess] = useState("");
     const [deletedItemData, setDeletedItemData] = useState({});
     const {data, message, loading, error} = useFetch(import.meta.env.VITE_API_URL + "wishlist");
-    const [currentItems, setCurrentItems] = useState(data);
+    const [currentItems, setCurrentItems] = useState([]);
+
+    useEffect(() => {
+        if (data) {
+        setCurrentItems(data);
+        }
+    }, [data]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,7 +47,10 @@ const Wishlist = () => {
     //console.log("initial load: ", loading);
 
     //console.log("currentItems at load: ", currentItems);
-
+  if(loading) {
+    return (<p>Loading...</p>)
+  }
+  
     return (
         <>
         <h4>{(deleteSuccess == "success")? "Item Deleted! Click View WishList to see updated wishlist!" : ""}</h4>
@@ -91,5 +100,4 @@ const Wishlist = () => {
         </form> 
         </>
     )}
-
 export default Wishlist;

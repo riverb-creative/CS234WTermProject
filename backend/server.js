@@ -20,7 +20,9 @@ app.use('/wishlist', wishlistRouter);
 
 
 app.get("/", (request, response) => {
-    response.status(200).json({message: "Welcome! This API has the following endpoints..."});
+    response.status(200).json(
+        {message: "Welcome! This API has the following endpoints... view wishlist, delete item, add item, and edit item"}
+    );
 });
 
 // Catch-all (Express 5 style)
