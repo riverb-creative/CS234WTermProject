@@ -36,14 +36,22 @@ const Wishlist = () => {
         setCurrentItems(data);
     }
 
+    console.log("data initial load: ", data);
+
+    console.log("initial load: ", loading);
+
+    console.log("currentItems at load: ", currentItems);
+
     return (
         <>
-        <p>Want to only view your favorites? Click the button below</p>
+       
+        <p>Want to only view your favorites? Click the <em>View Favorites</em> button below</p>
         <input onClick = {() => handleClick(currentItems.favorite) } 
-                type='button' id="btnSubmit" value="View Favorites" />
-        
-        <input onClick = {() => handleSeeAllClick(currentItems.favorite) } 
-                type='button' id="btnSubmit" value="View Wishlist" />
+                type='button' className="viewBtn" value="View Favorites" />
+        &nbsp;
+        &nbsp;
+        <input onClick = {() => handleSeeAllClick() } 
+                type='button' className="viewBtn" value="View Wishlist" />
 
         <form onSubmit={handleSubmit}>
             <table>
@@ -58,7 +66,7 @@ const Wishlist = () => {
                     </tr>
                 </thead>
                 {currentItems.map((item) => (
-                    <tbody>
+                    <tbody key={item._id}>
                     <tr>
                         <td>{item.category}</td>
                         <td>{item.name}</td>
@@ -69,7 +77,7 @@ const Wishlist = () => {
                        
                             item.favorite ? (
                             <img src="/images/redheart.png" alt="red heart" width="50"/> 
-                            ) : ("no")
+                            ) : ('')
                         }
                         </td>
                         <td>
@@ -80,7 +88,7 @@ const Wishlist = () => {
                  </tbody>   
                 ))}
             </table>
-        </form>
+        </form> 
         </>
     )}
 

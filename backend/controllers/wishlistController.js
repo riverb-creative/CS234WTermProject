@@ -56,3 +56,17 @@ exports.editItem = async(request, response) => {
         response.status(500).json({message: "failure", error: errMsg});
     }
 }
+
+/*//get item by category
+exports.getItemByCat = async(request, response) => {
+    const theCat = request.params.theCat;
+    if(theGenre) {
+        try {
+            const items = await Wishlist.find({category: theCat});
+            response.status(200).json(items);
+        }
+        catch (errMsg) {
+            response.status(400).json({error: "No such genre or server error - " + errMsg});
+        }
+    }
+}*/

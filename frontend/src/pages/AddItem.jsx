@@ -62,7 +62,7 @@ const AddItem = () => {
                     </select>
                     <br />
                     <br />
-                    <label for="itemName">Item Name:</label>
+                    <label htmlFor="itemName">Item Name:</label>
                     <br />
                     <input type="text" id="itemName" name="itemName" size="50"
                         placeholder='Enter Item Name'
@@ -71,7 +71,7 @@ const AddItem = () => {
                     />
                     <br />  
                     <br />
-                    <label for="itemQty">Quantity Wanted:</label>
+                    <label htmlFor="itemQty">Quantity Wanted:</label>
                     <br />
                     <input type="text" id="itemQty" name="itemQty" size="50"
                         placeholder='Enter Quantity Wanted'
@@ -80,7 +80,7 @@ const AddItem = () => {
                     />
                     <br />  
                     <br />
-                    <label for="itemPrice">Item Price:</label>
+                    <label htmlFor="itemPrice">Item Price:</label>
                     <br />
                     <input type="number" id="itemPrice" name="itemPrice" size="50"
                         placeholder='Enter Item Price'
@@ -94,13 +94,13 @@ const AddItem = () => {
                             checked={itemFav === true}
                             onChange={handleRadioChange}
                         />
-                            <label for="yesFav">Yes</label>
+                            <label htmlFor="yesFav">Yes</label>
                         <br/>
                         <input type="radio" id="noFav" name="itemFav" value="false"
                             checked={itemFav === false}
                             onChange={handleRadioChange}
                         />
-                            <label for="noFav">No</label>
+                            <label htmlFor="noFav">No</label>
                         <br/> 
                         <br />
                     <button type="submit">Submit</button> 

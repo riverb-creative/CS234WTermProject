@@ -39,3 +39,7 @@ thead {
   border: none;
 }
 
+.viewBtn {
+  margin: 30px;
+  padding: 10px;
+}
